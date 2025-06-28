@@ -1,4 +1,5 @@
 from flet import *
+from app.utils.color_schema import text_color_1
 
 class DivCustom(Container):
     def __init__(self,text,align="start",text_size=20):
@@ -11,7 +12,8 @@ class DivCustom(Container):
                     Text(
                         value=text,
                         weight=FontWeight.BOLD,
-                        size=text_size)
+                        size=text_size,
+                        color=text_color_1)
                     ],alignment=self.set_align),border=border.only(bottom=BorderSide(1,Colors.BLACK)))
     
     def set_aligment(self,align):

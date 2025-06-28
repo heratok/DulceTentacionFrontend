@@ -1,7 +1,5 @@
-
-
-
 from flet import *
+from app.utils.color_schema import text_color_1
 
 from app.components.check_button_custom import CheckButtonCuston
 from app.components.radio_button_custom import RadioButtonCuston
@@ -40,19 +38,19 @@ class BillingDealView(Container):
         print_checkbox = CheckButtonCuston(label="Imprimir", value=False).build()
         email_checkbox = CheckButtonCuston(
             label="Enviar por Email",
-            disabled=not bool(user),
+            disabled=False,  # Siempre habilitado para visualización
             value=False
         ).build()
         whatsapp_checkbox = CheckButtonCuston(
             label="Enviar por WhatsApp",
-            disabled=not bool(user),
+            disabled=False,  # Siempre habilitado para visualización
             value=False
         ).build()
 
         self.notifications = Row(
             alignment=MainAxisAlignment.SPACE_EVENLY,
             controls=[
-                Text("Métodos de notificación:"),
+                Text("Métodos de notificación:", color=text_color_1),
                 print_checkbox,
                 email_checkbox,
                 whatsapp_checkbox
@@ -77,17 +75,17 @@ class BillingDealView(Container):
                             spacing=20,
                             controls=[
 
-                                Text("Tipo de facturación:",
+                                Text("Tipo de facturación:", color=text_color_1,
                                      weight=FontWeight.BOLD),
                                 self.billing_type,
                                 Divider(color=Colors.RED_200),
 
-                                Text("Métodos de pago:",
+                                Text("Métodos de pago:", color=text_color_1,
                                      weight=FontWeight.BOLD),
                                 self.payment_method,
                                 Divider(color=Colors.RED_200),
 
-                                Text("Notificaciones:", weight=FontWeight.BOLD),
+                                Text("Notificaciones:", weight=FontWeight.BOLD, color=text_color_1),
                                 self.notifications
                             ]
                         )
