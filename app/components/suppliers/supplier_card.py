@@ -130,14 +130,22 @@ class SupplierCard(Card):
                                         content=Row(
                                             [
                                                 IconButton(
-                                                    icon=icons.DELETE_OUTLINE,
-                                                    icon_color=color_h1,
+                                                    content=Image(
+                                                        src="static/images/delete.png",
+                                                        width=24,
+                                                        height=24,
+                                                        fit=ImageFit.CONTAIN,
+                                                    ),
                                                     tooltip="Eliminar",
                                                     on_click=self.handle_delete,
                                                 ),
                                                 IconButton(
-                                                    icon=icons.EDIT,
-                                                    icon_color=color_h1,
+                                                    content=Image(
+                                                        src="static/images/edit-text.png",
+                                                        width=24,
+                                                        height=24,
+                                                        fit=ImageFit.CONTAIN,
+                                                    ),
                                                     tooltip="Editar",
                                                     on_click=self.handle_edit,
                                                 ),
