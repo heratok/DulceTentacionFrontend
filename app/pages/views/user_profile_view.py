@@ -12,11 +12,12 @@ class UserProfileView:
         self.show_details = show_details
 
     def build(self, on_ver_mas=None):
+        from app.utils.color_schema import bg_color_2
         if not self.show_details:
             # Modo resumen: mostrar título, nombre y rol, NO botón cambiar foto
             return ft.Container(
                 expand=True,
-                bgcolor="#FEFAE9",
+                bgcolor=bg_color_2,
                 alignment=ft.alignment.center,
                 content=ft.Column(
                     [
@@ -49,7 +50,7 @@ class UserProfileView:
             # Modo detalles: mostrar título, solo foto y botón cambiar foto, NO nombre ni rol
             return ft.Container(
                 expand=True,
-                bgcolor="#FEFAE9",
+                bgcolor=bg_color_2,
                 alignment=ft.alignment.center,
                 content=ft.ListView(
                     expand=True,

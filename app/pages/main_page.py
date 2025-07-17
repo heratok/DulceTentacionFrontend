@@ -79,7 +79,7 @@ class MainPage(Column):
     # La función show_user_profile_edit y la vista UserProfileEditView ya no son necesarias
 
     def on_profile_sidebar_option(self, option):
-        self.profile_sidebar_container.visible = False
+        self.profile_sidebar_container.visible = True
         self.profile_sidebar_container.update()
         if option == "user_data":
             self.show_user_profile()

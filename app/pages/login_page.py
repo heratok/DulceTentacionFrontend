@@ -1,6 +1,7 @@
 from flet import *
 from app.components.text_field import TextFieldCustom
 from app.utils.color_schema import *
+from app.models.auth import AuthModel
 
 
 class LoginPage:
@@ -29,11 +30,10 @@ class LoginPage:
         self.page.window.close()
 
     def build(self):
-        user = TextFieldCustom(
+        user_field = TextFieldCustom(
             label="Usuario", hint_text="Email o nombre de usuario", page=self.page
         ).build()
-
-        password = TextFieldCustom(
+        password_field = TextFieldCustom(
             label="Contraseña",
             hint_text="Digite su Contraseña",
             password=True,
@@ -41,8 +41,21 @@ class LoginPage:
             page=self.page,
         ).build()
 
+        error_text = Text("", color="red", visible=False)
+
         def handle_login(e):
-            # Lógica para validar credenciales
+            # email = user_field.value
+            # password = password_field.value
+            # error_text.visible = False
+            # error_text.value = ""
+            # error_text.update()
+            # data, status = AuthModel.login(email, password)
+            # if status == 200 and "token" in data:
+            #     self.page.go(route="/main")
+            # else:
+            #     error_text.value = data.get("error", "Error de autenticación")
+            #     error_text.visible = True
+            #     error_text.update()
             self.page.go(route="/main")
 
         return View(
@@ -68,12 +81,12 @@ class LoginPage:
                                 fit=ImageFit.CONTAIN,
                             ),
                             Container(height=35, width=1),
-                            user,
+                            user_field,
                             Container(height=10, width=1),
-                            password,
+                            password_field,
+                            error_text,
                             Container(height=50, width=1),
                             ElevatedButton(
-                                # text="Iniciar Sesion",
                                 width=150,
                                 height=55,
                                 style=ButtonStyle(shape=RoundedRectangleBorder(10)),

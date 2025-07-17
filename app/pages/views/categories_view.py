@@ -12,13 +12,36 @@ class CategoriesView(ft.Container):
         self.data = []
         self.grid = None
         self.dlg = AddCategory(self.page)
+        self.load_categorias()
+
+    def load_categorias(self):
+        import requests
+
+        try:
+            url = "http://localhost:5000/categories"
+            resp = requests.get(url)
+            if resp.status_code == 200:
+                data = resp.json()
+                self.data = data.get("categories", [])
+            else:
+                self.data = []
+        except Exception:
+            self.data = []
 
     def add_category(self, category_data):
-        self.data.append(category_data)
-        if self.grid:
-            self.grid.items = self.data
-            self.grid.loadGrid()
-            self.page.update()
+        import requests
+
+        try:
+            url = "http://localhost:5000/categories"
+            resp = requests.post(url, json=category_data)
+            if resp.status_code == 201:
+                self.load_categorias()
+                if self.grid:
+                    self.grid.items = self.data
+                    self.grid.loadGrid()
+                    self.page.update()
+        except Exception:
+            pass
 
     def edit_category(self, category_data):
         for i, cat in enumerate(self.data):

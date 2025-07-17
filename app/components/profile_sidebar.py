@@ -8,59 +8,92 @@ class ProfileSidebar(ft.Container):
             bgcolor=bg_color_2,
             width=220,
             padding=16,
-            border_radius=16,
-            shadow=ft.BoxShadow(blur_radius=16, color="#00000022"),
+            border=ft.border.only(
+                left=ft.BorderSide(2, "#9F9E9E"), right=ft.BorderSide(2, "#9F9E9E")
+            ),
             content=ft.Column(
                 [
-                    ft.Container(
-                        border_radius=12,
-                        bgcolor="#1a1a1a",
-                        padding=ft.padding.symmetric(vertical=2),
-                        content=ft.ListTile(
-                            leading=ft.Icon(ft.icons.PERSON, color="#f5f5f5"),
-                            title=ft.Text("Ver mis datos", color="#f5f5f5", size=16),
-                            on_click=lambda _: on_option_click("user_data"),
-                            shape=ft.RoundedRectangleBorder(radius=12),
+                    ft.ElevatedButton(
+                        content=ft.Row(
+                            [
+                                ft.Icon(ft.icons.PERSON, color="#1a1a1a"),
+                                ft.Text("Ver mis datos", color="#1a1a1a", size=16),
+                            ],
+                            alignment="center",
+                            spacing=10,
                         ),
+                        style=ft.ButtonStyle(
+                            bgcolor="#FFFFFF",
+                            color="#1a1a1a",
+                            shape=ft.RoundedRectangleBorder(radius=12),
+                            padding=ft.Padding(10, 10, 10, 10),
+                            elevation=2,
+                        ),
+                        on_click=lambda _: on_option_click("user_data"),
                     ),
-                    ft.Container(
-                        border_radius=12,
-                        bgcolor="#1a1a1a",
-                        padding=ft.padding.symmetric(vertical=2),
-                        content=ft.ListTile(
-                            leading=ft.Image(
-                                src="static/images/checklist.png", width=24, height=24
-                            ),
-                            title=ft.Text("Categorías", color="#f5f5f5", size=16),
-                            on_click=lambda _: on_option_click("categories"),
-                            shape=ft.RoundedRectangleBorder(radius=12),
+                    ft.ElevatedButton(
+                        content=ft.Row(
+                            [
+                                ft.Image(
+                                    src="static/images/checklist.png",
+                                    width=24,
+                                    height=24,
+                                ),
+                                ft.Text("Categorías", color="#1a1a1a", size=16),
+                            ],
+                            alignment="center",
+                            spacing=10,
                         ),
+                        style=ft.ButtonStyle(
+                            bgcolor="#FFFFFF",
+                            color="#1a1a1a",
+                            shape=ft.RoundedRectangleBorder(radius=12),
+                            padding=ft.Padding(10, 10, 10, 10),
+                            elevation=2,
+                        ),
+                        on_click=lambda _: on_option_click("categories"),
                     ),
-                    ft.Container(
-                        border_radius=12,
-                        bgcolor="#1a1a1a",
-                        padding=ft.padding.symmetric(vertical=2),
-                        content=ft.ListTile(
-                            leading=ft.Image(
-                                src="static/images/vendor.png", width=24, height=24
-                            ),
-                            title=ft.Text("Proveedores", color="#f5f5f5", size=16),
-                            on_click=lambda _: on_option_click("suppliers"),
-                            shape=ft.RoundedRectangleBorder(radius=12),
+                    ft.ElevatedButton(
+                        content=ft.Row(
+                            [
+                                ft.Image(
+                                    src="static/images/vendor.png", width=24, height=24
+                                ),
+                                ft.Text("Proveedores", color="#1a1a1a", size=16),
+                            ],
+                            alignment="center",
+                            spacing=10,
                         ),
+                        style=ft.ButtonStyle(
+                            bgcolor="#FFFFFF",
+                            color="#1a1a1a",
+                            shape=ft.RoundedRectangleBorder(radius=12),
+                            padding=ft.Padding(10, 10, 10, 10),
+                            elevation=2,
+                        ),
+                        on_click=lambda _: on_option_click("suppliers"),
                     ),
-                    ft.Container(
-                        border_radius=12,
-                        bgcolor="#1a1a1a",
-                        padding=ft.padding.symmetric(vertical=2),
-                        content=ft.ListTile(
-                            leading=ft.Image(
-                                src="static/images/vendedor.png", width=24, height=24
-                            ),
-                            title=ft.Text("Empleados", color="#f5f5f5", size=16),
-                            on_click=lambda _: on_option_click("employees"),
-                            shape=ft.RoundedRectangleBorder(radius=12),
+                    ft.ElevatedButton(
+                        content=ft.Row(
+                            [
+                                ft.Image(
+                                    src="static/images/vendedor.png",
+                                    width=24,
+                                    height=24,
+                                ),
+                                ft.Text("Empleados", color="#1a1a1a", size=16),
+                            ],
+                            alignment="center",
+                            spacing=10,
                         ),
+                        style=ft.ButtonStyle(
+                            bgcolor="#FFFFFF",
+                            color="#1a1a1a",
+                            shape=ft.RoundedRectangleBorder(radius=12),
+                            padding=ft.Padding(10, 10, 10, 10),
+                            elevation=2,
+                        ),
+                        on_click=lambda _: on_option_click("employees"),
                     ),
                 ],
                 spacing=16,
