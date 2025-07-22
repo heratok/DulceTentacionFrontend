@@ -55,16 +55,23 @@ class OpenCashDrawer(AlertDialog):
         )
         self.text_field= TextFieldCustom3("0,00")
         
+        from app.utils.color_schema import bg_color
         self.content = Container(
             height=200,
+            bgcolor=bg_color,
+            border_radius=BorderRadius(0, 0, 15, 15),
             content=Column(
                 alignment=MainAxisAlignment.CENTER,
                 horizontal_alignment=CrossAxisAlignment.CENTER,
                 spacing=40,
                 controls=[
-                    
                     self.text_field,
-                    ElevatedButton("Abrir Caja",on_click=lambda e :  self.openCD(e))
+                    ElevatedButton(
+                        "Abrir Caja",
+                        bgcolor="#D91E2E",
+                        color="white",
+                        on_click=lambda e: self.openCD(e)
+                    )
                 ]
             )
         )

@@ -14,7 +14,7 @@ class Line(Container):
         self.progress_bar = Container(
             width=self.progress_width,
             height=self.height,
-            bgcolor="#00FF00",
+            bgcolor="#D91E2E",
             animate=animation.Animation(500, "ease_out"),  # Animación de 500ms
         )
 

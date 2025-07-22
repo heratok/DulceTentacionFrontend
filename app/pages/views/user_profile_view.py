@@ -13,6 +13,7 @@ class UserProfileView:
 
     def build(self, on_ver_mas=None):
         from app.utils.color_schema import bg_color_2
+
         if not self.show_details:
             # Modo resumen: mostrar título, nombre y rol, NO botón cambiar foto
             return ft.Container(

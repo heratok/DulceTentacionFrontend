@@ -158,6 +158,13 @@ class SearchTextFieldCustom2(TextField):
             capitalization=TextCapitalization.WORDS,
             on_change=on_change,
             expand=expand,
+            bgcolor="#ffffff",
+            color="#000000",
+            text_style=TextStyle(color="#000000", size=16, weight=FontWeight.BOLD),
+            hint_style=TextStyle(color="#000000", size=16, weight=FontWeight.BOLD),
+            border_color="#000000",
+            focused_border_color="#000000",
+            cursor_color="#000000",
         )
 
 

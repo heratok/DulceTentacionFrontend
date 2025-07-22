@@ -372,6 +372,6 @@ class bill_view(Container):
                 spacing=0,
             ),
             expand=1,
-            bgcolor="white",
+            bgcolor="fff9e9",
             alignment=alignment.center,
         )

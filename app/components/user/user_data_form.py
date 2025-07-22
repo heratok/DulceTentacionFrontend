@@ -40,7 +40,9 @@ def UserDataForm(user, on_save=None, editable=True):
                                     bgcolor="transparent",
                                     border=ft.InputBorder.UNDERLINE,
                                     read_only=not editable,
-                                    content_padding=ft.padding.symmetric(horizontal=0, vertical=2),
+                                    content_padding=ft.padding.symmetric(
+                                        horizontal=0, vertical=2
+                                    ),
                                 ),
                                 ft.Text(
                                     "Nombres",
@@ -58,7 +60,9 @@ def UserDataForm(user, on_save=None, editable=True):
                                     bgcolor="transparent",
                                     border=ft.InputBorder.UNDERLINE,
                                     read_only=not editable,
-                                    content_padding=ft.padding.symmetric(horizontal=0, vertical=2),
+                                    content_padding=ft.padding.symmetric(
+                                        horizontal=0, vertical=2
+                                    ),
                                 ),
                                 ft.Text(
                                     "Correo",
@@ -76,7 +80,9 @@ def UserDataForm(user, on_save=None, editable=True):
                                     bgcolor="transparent",
                                     border=ft.InputBorder.UNDERLINE,
                                     read_only=not editable,
-                                    content_padding=ft.padding.symmetric(horizontal=0, vertical=2),
+                                    content_padding=ft.padding.symmetric(
+                                        horizontal=0, vertical=2
+                                    ),
                                 ),
                                 ft.Text(
                                     "Usuario",
@@ -94,7 +100,9 @@ def UserDataForm(user, on_save=None, editable=True):
                                     bgcolor="transparent",
                                     border=ft.InputBorder.UNDERLINE,
                                     read_only=not editable,
-                                    content_padding=ft.padding.symmetric(horizontal=0, vertical=2),
+                                    content_padding=ft.padding.symmetric(
+                                        horizontal=0, vertical=2
+                                    ),
                                 ),
                             ],
                             spacing=0,
@@ -119,7 +127,9 @@ def UserDataForm(user, on_save=None, editable=True):
                                     bgcolor="transparent",
                                     border=ft.InputBorder.UNDERLINE,
                                     read_only=not editable,
-                                    content_padding=ft.padding.symmetric(horizontal=0, vertical=2),
+                                    content_padding=ft.padding.symmetric(
+                                        horizontal=0, vertical=2
+                                    ),
                                 ),
                                 ft.Text(
                                     "Apellidos",
@@ -137,7 +147,9 @@ def UserDataForm(user, on_save=None, editable=True):
                                     bgcolor="transparent",
                                     border=ft.InputBorder.UNDERLINE,
                                     read_only=not editable,
-                                    content_padding=ft.padding.symmetric(horizontal=0, vertical=2),
+                                    content_padding=ft.padding.symmetric(
+                                        horizontal=0, vertical=2
+                                    ),
                                 ),
                                 ft.Text(
                                     "Teléfono",
@@ -155,7 +167,9 @@ def UserDataForm(user, on_save=None, editable=True):
                                     bgcolor="transparent",
                                     border=ft.InputBorder.UNDERLINE,
                                     read_only=not editable,
-                                    content_padding=ft.padding.symmetric(horizontal=0, vertical=2),
+                                    content_padding=ft.padding.symmetric(
+                                        horizontal=0, vertical=2
+                                    ),
                                 ),
                                 ft.Text(
                                     "Contraseña",
@@ -173,7 +187,9 @@ def UserDataForm(user, on_save=None, editable=True):
                                     bgcolor="transparent",
                                     border=ft.InputBorder.UNDERLINE,
                                     read_only=not editable,
-                                    content_padding=ft.padding.symmetric(horizontal=0, vertical=2),
+                                    content_padding=ft.padding.symmetric(
+                                        horizontal=0, vertical=2
+                                    ),
                                 ),
                             ],
                             spacing=0,
@@ -205,7 +221,9 @@ def UserDataForm(user, on_save=None, editable=True):
                                     bgcolor="transparent",
                                     border=ft.InputBorder.UNDERLINE,
                                     read_only=not editable,
-                                    content_padding=ft.padding.symmetric(horizontal=0, vertical=2),
+                                    content_padding=ft.padding.symmetric(
+                                        horizontal=0, vertical=2
+                                    ),
                                 ),
                             ],
                             expand=True,
@@ -228,7 +246,9 @@ def UserDataForm(user, on_save=None, editable=True):
                                     bgcolor="transparent",
                                     border=ft.InputBorder.UNDERLINE,
                                     read_only=not editable,
-                                    content_padding=ft.padding.symmetric(horizontal=0, vertical=2),
+                                    content_padding=ft.padding.symmetric(
+                                        horizontal=0, vertical=2
+                                    ),
                                 ),
                             ],
                             expand=True,
@@ -251,7 +271,9 @@ def UserDataForm(user, on_save=None, editable=True):
                                     bgcolor="transparent",
                                     border=ft.InputBorder.UNDERLINE,
                                     read_only=not editable,
-                                    content_padding=ft.padding.symmetric(horizontal=0, vertical=2),
+                                    content_padding=ft.padding.symmetric(
+                                        horizontal=0, vertical=2
+                                    ),
                                 ),
                             ],
                             expand=True,
@@ -282,7 +304,9 @@ def UserDataForm(user, on_save=None, editable=True):
                                     bgcolor="transparent",
                                     border=ft.InputBorder.UNDERLINE,
                                     read_only=not editable,
-                                    content_padding=ft.padding.symmetric(horizontal=0, vertical=2),
+                                    content_padding=ft.padding.symmetric(
+                                        horizontal=0, vertical=2
+                                    ),
                                 ),
                             ],
                             expand=True,
@@ -305,7 +329,9 @@ def UserDataForm(user, on_save=None, editable=True):
                                     bgcolor="transparent",
                                     border=ft.InputBorder.UNDERLINE,
                                     read_only=not editable,
-                                    content_padding=ft.padding.symmetric(horizontal=0, vertical=2),
+                                    content_padding=ft.padding.symmetric(
+                                        horizontal=0, vertical=2
+                                    ),
                                 ),
                             ],
                             expand=True,

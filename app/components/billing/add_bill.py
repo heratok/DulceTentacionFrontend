@@ -75,7 +75,12 @@ class AddBill(AlertDialog):
         )
         stepper_content = [self.product.build(), self.client.build(), self.deal.build()]
 
-        self.content = Stepper(page=self.page,content=stepper_content,titles=titles).build()
+        self.content = Container(
+            bgcolor="#dfd3b3",
+            border_radius=BorderRadius(15, 15, 15, 15),
+            padding=padding.all(0),
+            content=Stepper(page=self.page,content=stepper_content,titles=titles).build()
+        )
 
     
     def build(self):

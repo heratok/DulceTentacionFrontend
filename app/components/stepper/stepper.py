@@ -20,14 +20,24 @@ class Stepper(Container):
         self.way2 = Line(page=page, width=300)
         self.step3 = Circle(30, page, "3")
         self.button_next = ElevatedButton(
-            "Siguiente", on_click=lambda e: self.Next(), style=ButtonStyle(shape=RoundedRectangleBorder(5)))
+            "Siguiente",
+            bgcolor="#D91E2E",
+            color="white",
+            on_click=lambda e: self.Next(),
+            style=ButtonStyle(shape=RoundedRectangleBorder(5))
+        )
         self.button_back = ElevatedButton(
-            "Volver", on_click=lambda e: self.Back(), style=ButtonStyle(shape=RoundedRectangleBorder(5)))
+            "Volver",
+            bgcolor="#D91E2E",
+            color="white",
+            on_click=lambda e: self.Back(),
+            style=ButtonStyle(shape=RoundedRectangleBorder(5))
+        )
         self.title = Text(
-            self.titles[self.index_step -
-                        1] if self.titles else "Texto descripción",
+            self.titles[self.index_step - 1] if self.titles else "Texto descripción",
             weight=FontWeight.BOLD,
             size=25,
+            color="black",
             opacity=1,
             animate_opacity=animation.Animation(500, "ease_out"),
         )
@@ -54,6 +64,8 @@ class Stepper(Container):
                     # Título y pasos
                     Container(
                         expand=1,
+                        bgcolor="#dfd3b3",
+                        border_radius=BorderRadius(15, 15, 0, 0),
                         content=Column(
                             alignment=MainAxisAlignment.START,
                             horizontal_alignment=CrossAxisAlignment.CENTER,
@@ -76,8 +88,8 @@ class Stepper(Container):
                     # Contenido dinámico
                     Container(
                         expand=6,
-                        bgcolor="#ffffff",
-                        border_radius=15,
+                        bgcolor="#fefae9",
+                        border_radius=BorderRadius(0, 0, 15, 15),
                         shadow=BoxShadow(1.5, 10, "0x7f7f7f", (2, 5)),
                         content=self.content_stack,
                     ),

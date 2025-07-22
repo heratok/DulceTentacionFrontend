@@ -69,7 +69,8 @@ class BillingSelectProductView(Container):
     def build(self):
         return Container(
             expand=1,
-            
+            bgcolor="#fefae9",
+            border_radius=15,
             content=Column(
                 scroll=ScrollMode.ALWAYS,
                 expand_loose=True,
@@ -77,21 +78,23 @@ class BillingSelectProductView(Container):
                     Container(
                         expand=1,
                         padding=20,
+                        bgcolor="#fefae9",
+                        border_radius=10,
                         content=self.search_text_field,
                     ),
                     Container(
                         padding=0,
                         expand=5,
+                        # No cambiar el color de las cards de productos
                         content=self.list_products.build(),
                     ),
                     Container(
                         expand=5,
-                        
+                        # Mantener el color original de las cards de productos
                         content=self.list_details.build(),
                     )
                 ]
             ),
-            #animate_position=animation.Animation(500, "ease_out")
         )
 
 

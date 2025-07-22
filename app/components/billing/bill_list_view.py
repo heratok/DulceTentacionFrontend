@@ -21,14 +21,19 @@ class BillListView(Container):
                 expand=1,
                 scroll=ScrollMode.ALWAYS,
                 controls=self.listItemsWidget,
-            )
+            ),
         )
 
-       
-
     def loadItemWidget(self, list):
-        self.listItemsWidget = [BillListItem(
-            item, self.page, on_select=lambda e, item=item:  self.select_item(item),index=index).build() for index,item in enumerate(list)]
+        self.listItemsWidget = [
+            BillListItem(
+                item,
+                self.page,
+                on_select=lambda e, item=item: self.select_item(item),
+                index=index,
+            ).build()
+            for index, item in enumerate(list)
+        ]
 
     def select_item(self, data):
         self.item_select_data = data

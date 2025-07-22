@@ -2,6 +2,7 @@ from flet import *
 
 from app.components.billing.deal_list_item import DealListItem
 
+
 class DealListView(Container):
     def __init__(self, items, page=Page):
         super().__init__()
@@ -16,19 +17,21 @@ class DealListView(Container):
         self.content = Container(
             padding=0,
             expand=1,
-            border=Border(left=BorderSide(1,Colors.BLACK)),
+            border=Border(left=BorderSide(1, Colors.BLACK)),
             content=Column(
                 expand=1,
                 scroll=ScrollMode.ALWAYS,
                 controls=self.listItemsWidget,
-            )
+            ),
         )
 
-        
-
     def loadItemWidget(self, list):
-        self.listItemsWidget = [DealListItem(
-            item, self.page, on_select=lambda e, item=item:  self.select_item(item)).build() for item in list]
+        self.listItemsWidget = [
+            DealListItem(
+                item, self.page, on_select=lambda e, item=item: self.select_item(item)
+            ).build()
+            for item in list
+        ]
 
     def select_item(self, data):
         self.item_select_data = data

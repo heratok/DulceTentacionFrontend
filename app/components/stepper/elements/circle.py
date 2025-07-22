@@ -17,8 +17,7 @@ class Circle(Container):
         self.progress_bar = Container(
             width=self.progress_width,
             height=self.height,
-            bgcolor="0x00ff00",
-
+            bgcolor="#D91E2E",
             animate=animation.Animation(500, "ease_out"),  # Animación de 500ms
         )
         # Contenedor general
@@ -38,7 +37,7 @@ class Circle(Container):
                         alignment=alignment.center,
                         height=self.height,
                         padding=0,
-                        content=Text(self.text, weight=FontWeight.BOLD, size=self.text_size),)
+                        content=Text(self.text, weight=FontWeight.BOLD, size=self.text_size, color="white"),)
                 ],  # Siempre comienza desde la izquierda
             ),
         )
