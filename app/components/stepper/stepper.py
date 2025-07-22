@@ -6,7 +6,12 @@ from app.components.stepper.elements.line import Line
 
 
 class Stepper(Container):
-    def __init__(self, page=Page, content=None, titles=[],):
+    def __init__(
+        self,
+        page=Page,
+        content=None,
+        titles=[],
+    ):
         super().__init__()
         self.index_step = 1
         self.titles = titles
@@ -24,14 +29,14 @@ class Stepper(Container):
             bgcolor="#D91E2E",
             color="white",
             on_click=lambda e: self.Next(),
-            style=ButtonStyle(shape=RoundedRectangleBorder(5))
+            style=ButtonStyle(shape=RoundedRectangleBorder(5)),
         )
         self.button_back = ElevatedButton(
             "Volver",
             bgcolor="#D91E2E",
             color="white",
             on_click=lambda e: self.Back(),
-            style=ButtonStyle(shape=RoundedRectangleBorder(5))
+            style=ButtonStyle(shape=RoundedRectangleBorder(5)),
         )
         self.title = Text(
             self.titles[self.index_step - 1] if self.titles else "Texto descripción",
@@ -111,8 +116,8 @@ class Stepper(Container):
     def Back(self):
         if self.index_step == 3:
             self.step3.back()
-            time.sleep(.5)
-            self.update_text(self.titles[self.index_step-2])
+            time.sleep(0.5)
+            self.update_text(self.titles[self.index_step - 2])
 
             self.way2.back()
 
@@ -120,8 +125,8 @@ class Stepper(Container):
 
         elif self.index_step == 2:
             self.step2.back()
-            time.sleep(.5)
-            self.update_text(self.titles[self.index_step-2])
+            time.sleep(0.5)
+            self.update_text(self.titles[self.index_step - 2])
 
             self.way1.back()
 
@@ -140,7 +145,7 @@ class Stepper(Container):
             self.way1.next()
             self.update_text(self.titles[self.index_step])
             self.update_content()
-            time.sleep(.5)
+            time.sleep(0.5)
             self.step2.next()
 
             # añadir la logica para cambiar el contenido del paso
@@ -148,7 +153,7 @@ class Stepper(Container):
             self.way2.next()
             self.update_text(self.titles[self.index_step])
 
-            time.sleep(.5)
+            time.sleep(0.5)
             self.step3.next()
 
             # añadir la logica para cambiar el contenido del paso
@@ -166,9 +171,9 @@ class Stepper(Container):
         Actualiza los offsets del contenido en el Stack para crear el efecto de deslizamiento.
         """
         for i, widget in enumerate(self.content_stack.controls):
-            if i == self.index_step-1:
+            if i == self.index_step - 1:
                 widget.offset = transform.Offset(0, 0)  # Centro
-            elif i < self.index_step-1:
+            elif i < self.index_step - 1:
                 widget.offset = transform.Offset(-1, 0)  # Izquierda
             else:
                 widget.offset = transform.Offset(1, 0)  # Derecha

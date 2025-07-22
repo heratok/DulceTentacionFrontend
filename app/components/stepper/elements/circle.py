@@ -1,6 +1,3 @@
-
-
-
 from flet import *
 
 
@@ -27,7 +24,7 @@ class Circle(Container):
             height=self.height,
             expand=False,
             expand_loose=True,
-            border_radius=self.width/2,
+            border_radius=self.width / 2,
             alignment=alignment.center_left,
             content=Stack(
                 controls=[
@@ -37,7 +34,13 @@ class Circle(Container):
                         alignment=alignment.center,
                         height=self.height,
                         padding=0,
-                        content=Text(self.text, weight=FontWeight.BOLD, size=self.text_size, color="white"),)
+                        content=Text(
+                            self.text,
+                            weight=FontWeight.BOLD,
+                            size=self.text_size,
+                            color="white",
+                        ),
+                    ),
                 ],  # Siempre comienza desde la izquierda
             ),
         )
@@ -53,15 +56,13 @@ class Circle(Container):
 
     def back(self):
         for i in range(11):  # Incrementar de 0 a 1 en pasos
-            self.update_progress(1-(i / 10))
+            self.update_progress(1 - (i / 10))
 
     def update_progress(self, progress: float):
         """
         Actualiza el progreso de la barra.
         :param progress: Un valor entre 0.0 y 1.0 representando el porcentaje.
         """
-        self.progress_width = (
-            self.content.width or self.page.window.width) * progress
+        self.progress_width = (self.content.width or self.page.window.width) * progress
         self.progress_bar.width = self.progress_width  # Actualizar ancho
         self.progress_bar.update()
-

@@ -1,4 +1,3 @@
-
 from flet import *
 
 
@@ -42,15 +41,13 @@ class Line(Container):
 
     def back(self):
         for i in range(11):  # Incrementar de 0 a 1 en pasos
-            self.update_progress(1-(i / 10))
+            self.update_progress(1 - (i / 10))
 
     def update_progress(self, progress: float):
         """
         Actualiza el progreso de la barra.
         :param progress: Un valor entre 0.0 y 1.0 representando el porcentaje.
         """
-        self.progress_width = (
-            self.content.width or self.page.window.width) * progress
+        self.progress_width = (self.content.width or self.page.window.width) * progress
         self.progress_bar.width = self.progress_width  # Actualizar ancho
         self.progress_bar.update()
-
