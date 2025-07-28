@@ -131,7 +131,9 @@ class SearchTextFieldCustom(TextField):
             fit_parent_size=True,
             hint_text=hint_text,
             filled=True,
-            dense=False,
+            bgcolor="#ffffff",
+            color="#000000",
+            border_color="#000000",
             border=InputBorder.UNDERLINE,
             width=width,
             height=height,
@@ -139,6 +141,7 @@ class SearchTextFieldCustom(TextField):
             content_padding=padding.only(10, 10, 10, 3),
             capitalization=TextCapitalization.WORDS,
             on_change=on_change,
+            hint_style=TextStyle(color="#000000"),
         )
 
 
@@ -179,6 +182,7 @@ class PlainTextField(TextField):
             fit_parent_size=True,
             label="",
             hint_text=hint_text,
+            hint_style=TextStyle(color="#000000"),
             filled=True,
             dense=False,
             expand=True,
@@ -189,4 +193,8 @@ class PlainTextField(TextField):
             text_align=TextAlign.START,
             multiline=True,
             capitalization=TextCapitalization.SENTENCES,
+            bgcolor="#fefae9",
+            focused_border_color="#000000",
+            border_color="#000000",
+            color="#000000",
         )

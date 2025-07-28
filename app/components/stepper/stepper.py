@@ -70,7 +70,7 @@ class Stepper(Container):
                     Container(
                         expand=1,
                         bgcolor="#dfd3b3",
-                        border_radius=BorderRadius(15, 15, 0, 0),
+                        # border_radius removido para esquinas rectas
                         content=Column(
                             alignment=MainAxisAlignment.START,
                             horizontal_alignment=CrossAxisAlignment.CENTER,

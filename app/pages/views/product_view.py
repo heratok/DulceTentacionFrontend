@@ -159,16 +159,17 @@ class product_view(Container):
             "Buscar insumo por nombre", width=500, on_change=lambda e: grid.filter(e)
         )
         return Container(
+            bgcolor="#fff9e9",
             content=Column(
                 [
-                    Text("Productos", size=40),
+                    Text("Productos", size=40, color="#000000"),
                     Container(height=20, width=1),
                     filter,
-                    Container(height=50, bgcolor="yellow"),
+                    Container(height=50, bgcolor="#fff1cd"),
                     grid.build(),
                     Container(
                         height=100,
-                        bgcolor="green",
+                        bgcolor="#fff1cd",
                         content=Row(
                             controls=[
                                 IconButtonAction(
@@ -204,6 +205,5 @@ class product_view(Container):
                 spacing=0,
             ),
             expand=True,
-            bgcolor="black",
             alignment=alignment.center,
         )

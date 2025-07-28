@@ -84,7 +84,7 @@ class AddBill(AlertDialog):
 
         self.content = Container(
             bgcolor="#dfd3b3",
-            border_radius=BorderRadius(15, 15, 15, 15),
+            border_radius=BorderRadius(0, 0, 15, 15),
             padding=padding.all(0),
             content=Stepper(
                 page=self.page, content=stepper_content, titles=titles

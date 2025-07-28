@@ -85,7 +85,7 @@ class suppliers_view(Container):
                                 FloatingActionButton(
                                     width=70,
                                     height=70,
-                                    bgcolor=Colors.BLACK,
+                                    bgcolor="#D91E2E",
                                     icon=icons.ADD,
                                     tooltip="Agregar Proveedor",
                                     on_click=self.open_add_modal,

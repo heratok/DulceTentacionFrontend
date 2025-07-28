@@ -131,44 +131,50 @@ class ReplenishInventory(AlertDialog):
         self.actions = None
         self.elevation = 100
         self.shadow_color = Colors.RED_300
-        self.item_select = ItemViewSelect(data={}, page=self.page,)
+        self.item_select = ItemViewSelect(
+            data={},
+            page=self.page,
+        )
         self.item_select_data = None
         self.title = Container(
             bgcolor="red",
             border_radius=BorderRadius(15, 15, 0, 0),
             expand=True,
             width=900,
-
             content=Row(
                 [
                     Image(
                         "static/images/logo.png",
                         width=70,
                         height=40,
-                        fit=ImageFit.CONTAIN
+                        fit=ImageFit.CONTAIN,
                     ),
-                    Text(value="Registar Insumo", size=18,
-                         weight=FontWeight.BOLD, color=Colors.WHITE),
+                    Text(
+                        value="Registar Insumo",
+                        size=18,
+                        weight=FontWeight.BOLD,
+                        color=Colors.WHITE,
+                    ),
                     Container(height=1, expand=True, bgcolor=Colors.WHITE),
                     IconButton(
                         icon_color=Colors.WHITE,
                         icon=icons.CLOSE,
-                        on_click=lambda x: self.page.close(self)
-                    )
+                        on_click=lambda x: self.page.close(self),
+                    ),
                 ]
-            )
+            ),
         )
-        self.listItemsWidget=[]
+        self.listItemsWidget = []
         self.loadItemWidget(self.items)
         self.listitems = Container(
-            bgcolor=Colors.BLUE_600,
+            bgcolor="#dfd3b3",
             padding=0,
             expand=True,
             content=Column(
                 expand=True,
                 scroll=ScrollMode.ALWAYS,
                 controls=self.listItemsWidget,
-            )
+            ),
         )
 
         self.data = [
@@ -177,7 +183,7 @@ class ReplenishInventory(AlertDialog):
         ]
         self.bach = BatchView(self.data, self.page)
         self.content = Container(
-            bgcolor=Colors.GREEN,
+            bgcolor="#fefae9",
             border_radius=BorderRadius(0, 0, 15, 15),
             padding=Padding(20, 0, 20, 20),
             height=900,
@@ -192,38 +198,47 @@ class ReplenishInventory(AlertDialog):
                             horizontal_alignment=CrossAxisAlignment.CENTER,
                             controls=[
                                 Container(width=1, height=10),
-                                Text("Lista de Insumos",
-                                     weight=FontWeight.BOLD, size=20),
+                                Text(
+                                    "Lista de Insumos",
+                                    weight=FontWeight.BOLD,
+                                    size=20,
+                                    color="#000000",
+                                ),
                                 SearchTextFieldCustom(
-                                    "Buscar insumo por nombre", width=300, on_change=lambda e: self.search(e.data)),
-                                Container(
-                                    height=1, bgcolor=Colors.BLACK, width=400),
-                                self.listitems
-                            ]
-                        )
+                                    "Buscar insumo por nombre",
+                                    width=300,
+                                    on_change=lambda e: self.search(e.data),
+                                ),
+                                Container(height=1, bgcolor=Colors.BLACK, width=400),
+                                self.listitems,
+                            ],
+                        ),
                     ),
                     Column(
                         expand=True,
-                        
                         controls=[
                             DivCustom("Informacion sobre lotes"),
                             self.item_select.build(),
                             DivCustom("Informacion sobre lotes"),
-                            self.bach.build()
-                        ]
-                    )
-                ]
-            )
+                            self.bach.build(),
+                        ],
+                    ),
+                ],
+            ),
         )
 
     def loadItemWidget(self, list):
-        self.listItemsWidget = [ReplenishItemInventory(
-            item, self.page, on_select=lambda e, item=item:  self.select_item(item)).build() for item in list]
+        self.listItemsWidget = [
+            ReplenishItemInventory(
+                item, self.page, on_select=lambda e, item=item: self.select_item(item)
+            ).build()
+            for item in list
+        ]
 
     def search(self, data):
         filter_items = []
         for item in self.items:
-            if data in item['ref'] or data in item['nombre']:
+            if data in item["ref"] or data in item["nombre"]:
                 filter_items.append(item)
 
         print(filter_items)
@@ -246,7 +261,9 @@ class ItemViewSelect(Container):
         super().__init__()
         self.page = page
         self.data = data or {}
-        self.container = Container(padding=Padding(20,5,5,5))  # Contenedor que se actualizará dinámicamente
+        self.container = Container(
+            padding=Padding(20, 5, 5, 5)
+        )  # Contenedor que se actualizará dinámicamente
         self.build_view()
 
     def set_data(self, data):
@@ -259,7 +276,7 @@ class ItemViewSelect(Container):
             controls=[
                 Column(
                     controls=[
-                        Text(self.data.get("ref", "PROD-XXXXXX")),
+                        Text(self.data.get("ref", "PROD-XXXXXX"), color="#000000"),
                         Image(
                             "static/images/helado.png",
                             width=100,
@@ -267,33 +284,39 @@ class ItemViewSelect(Container):
                             fit=ImageFit.COVER,
                             border_radius=10,
                         ),
-                        Text(self.data.get("nombre", "Sin nombre")),
+                        Text(self.data.get("nombre", "Sin nombre"), color="#000000"),
                     ]
                 ),
                 Column(
                     controls=[
                         Row(
                             controls=[
-                                Text("Categoria: "),
-                                Text(self.data.get("categoria", "null")),
+                                Text("Categoria: ", color="#000000"),
+                                Text(
+                                    self.data.get("categoria", "null"), color="#000000"
+                                ),
                             ]
                         ),
                         Row(
                             controls=[
-                                Text("Precio: "),
-                                Text(str(self.data.get("precio", 0.0))),
+                                Text("Precio: ", color="#000000"),
+                                Text(
+                                    str(self.data.get("precio", 0.0)), color="#000000"
+                                ),
                             ]
                         ),
                         Row(
                             controls=[
-                                Text("Stock: "),
-                                Text(str(self.data.get("stock", 0))),
+                                Text("Stock: ", color="#000000"),
+                                Text(str(self.data.get("stock", 0)), color="#000000"),
                             ]
                         ),
                         Row(
                             controls=[
-                                Text("Unidad: "),
-                                Text(self.data.get("unidad", "unidades")),
+                                Text("Unidad: ", color="#000000"),
+                                Text(
+                                    self.data.get("unidad", "unidades"), color="#000000"
+                                ),
                             ]
                         ),
                     ]
@@ -310,11 +333,19 @@ class ReplenishItemInventory(Card):
         super().__init__()
         self.page = page
         self.data = {
-            "nombre": data.get("nombre", "Sin nombre") if data.get("nombre") else "Sin nombre",
+            "nombre": (
+                data.get("nombre", "Sin nombre") if data.get("nombre") else "Sin nombre"
+            ),
             "ref": data.get("ref", "PROD-XXXXXX") if data.get("ref") else "PROD-XXXXXX",
-            "precio": data.get("precio", 0.0) if isinstance(data.get("precio"), (int, float)) else 0.0,
+            "precio": (
+                data.get("precio", 0.0)
+                if isinstance(data.get("precio"), (int, float))
+                else 0.0
+            ),
             "stock": data.get("stock", 0) if isinstance(data.get("stock"), int) else 0,
-            "unidad": data.get("unidad", "unidades") if data.get("unidad") else "unidades"
+            "unidad": (
+                data.get("unidad", "unidades") if data.get("unidad") else "unidades"
+            ),
         }
         self.on_select = on_select
 
@@ -342,14 +373,16 @@ class ReplenishItemInventory(Card):
                         width=50,
                         height=50,
                         fit=ImageFit.COVER,
-                        border_radius=10
+                        border_radius=10,
                     ),
-                    title=Text(
-                        self.data['nombre'], weight=FontWeight.BOLD),
-                    subtitle=Text(self.data['ref']),
+                    title=Text(self.data["nombre"], weight=FontWeight.BOLD),
+                    subtitle=Text(self.data["ref"]),
                     trailing=IconButton(
-                        Icons.ARROW_RIGHT_ALT_SHARP, icon_size=30, on_click=lambda x: self.selected()),
-                    width=400
-                )
-            )
+                        Icons.ARROW_RIGHT_ALT_SHARP,
+                        icon_size=30,
+                        on_click=lambda x: self.selected(),
+                    ),
+                    width=400,
+                ),
+            ),
         )

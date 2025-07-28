@@ -75,7 +75,7 @@ class EmployeesView(Container):
                                 FloatingActionButton(
                                     width=70,
                                     height=70,
-                                    bgcolor=colors.BLACK,
+                                    bgcolor="#D91E2E",
                                     icon=icons.ADD,
                                     tooltip="Agregar Empleado",
                                     on_click=self.open_add_modal,

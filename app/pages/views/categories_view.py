@@ -98,7 +98,7 @@ class CategoriesView(ft.Container):
                                 ft.FloatingActionButton(
                                     width=70,
                                     height=70,
-                                    bgcolor=ft.colors.BLACK,
+                                    bgcolor="#D91E2E",
                                     icon=ft.icons.ADD,
                                     tooltip="Agregar Categoría",
                                     on_click=self.open_add_modal,
